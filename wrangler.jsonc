@@ -1,0 +1,33 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "sinjab-emdash",
+	"main": "./src/worker.ts",
+	"compatibility_date": "2026-03-29",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"assets": {
+		"directory": "./dist",
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "sinjab-emdash-db","database_id": "b16f1195-2cee-4598-ab56-5fba0702bcd2",
+			// Run `wrangler d1 create my-emdash-site` and paste the ID here
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "MEDIA",
+			"bucket_name": "sinjab-emdash-media","preview_bucket_name": "sinjab-emdash-media",
+		},
+	],
+	"observability": {
+		"enabled": true,
+	},
+	"worker_loaders": [
+		{
+			"binding": "LOADER",
+		},
+	],
+}
